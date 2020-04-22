@@ -1,0 +1,14 @@
+[Unit]
+Description=shutdownPi service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python -u shutdown.py
+WorkingDirectory=/home/pi/shutdownPi
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
